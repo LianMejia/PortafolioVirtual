@@ -5,8 +5,10 @@
         <title>Lian</title>
         <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;1,200&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="css/estilos.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
     <body>
+        <i class="icon-menu burger-button" id="burger-menu"></i>
         <header class="header">
             <div class="container">
                 <figure class="logo">
@@ -27,6 +29,7 @@
                 </nav>
             </div>
         </header>
+
         <section class="hero">
             <div class="container">
                 <h1>
@@ -35,7 +38,7 @@
                 </h1>
                 <img class="hero-image" src="images/programmer.jpg" alt="No se pudo acceder a la imagen" width="500" alt="Imagen principal del sitio"/>
             </div>
-           <!-- <img src="images/programmer.jpg" alt="No se pudo acceder a la imagen" width="500" alt="Imagen principal del sitio"/> -->
+            <!-- <img src="images/programmer.jpg" alt="No se pudo acceder a la imagen" width="500" alt="Imagen principal del sitio"/> -->
         </section>
 
         <section id="portafolio" class="portfolio">
@@ -50,7 +53,7 @@
                   <p class="project-description">Esto fue el resultado de 3 meses llenos de trabajo</p>
                 </div>
                 <figure class="project-imageContainer">
-                    <img class="project-image" src="images/react.jpg" alt="Proyecto del curso de React Native" width="500">
+                    <img class="project-image" src="images/react.jpg" alt="Proyecto del curso de React Native" width="300">
                 </figure>
             </article>
             <article class="project">
@@ -62,16 +65,16 @@
                   <p class="project-description">Esto fue el resultado de 3 meses llenos de trabajo</p>
                 </div>
                 <figure class="project-imageContainer">
-                    <img class="project-image" src="images/react.jpg" alt="Proyecto del curso de React Native" width="500">
+                    <img class="project-image" src="images/react.jpg" alt="Proyecto del curso de React Native" width="300">
                 </figure>
             </article>
-            </div>
-            
+            </div>      
         </section>
 
         <div class="container">
             <h2 class="event-list-title">Mas sobre mi experiencia</h2>
-        </div>
+        </div> 
+
         <section id="eventos" class="event-list">
             <div class="container">
                 <article class="event">
@@ -120,7 +123,7 @@
             </div>
             
 
-        </section>
+        </section> 
 
         <section id="contacto" class="contact">
             <div class="container">
@@ -137,7 +140,7 @@
                 </div>
             </div>
             
-        </section>
+        </section> 
 
         <footer class="footer">
             <div class="container">
@@ -145,10 +148,42 @@
                     <p>Curso de Desarrollo Web Online 2020</p>
                 </div>
                 <div>
-                    <p>Designed with love <\3 by action <a href="http://thespianartist://twitter.com/thespianartist">@thespianartist</a> </p>
+                    <p>Designed with love ❤ by action <a href="http://thespianartist://twitter.com/thespianartist">@thespianartist</a> </p>
                 </div>
             </div>
         
-        </footer>
+        </footer> 
+        <script>
+            console.log('Hola mundo! esta es mi primera linea de codigo');
+
+            const ipad = window.matchMedia('screen and (max-width: 767px)');
+
+            const menu = document.querySelector('.menu');
+            console.log(menu);
+
+            const burgerButton = document.querySelector('#burger-menu');
+            console.log(burgerButton);
+
+            burgerButton.addEventListener('click', hideShow);
+
+            ipad.addListener(validation)
+
+            function validation(event){
+                if(event.matches){
+                    burgerButton.addEventListener('click', hideShow)
+                }else{
+                    burgerButton.removeEventListener('click', hideShow)
+                }
+            }
+
+            function hideShow(){
+                if(menu.classList.contains('is-active')){
+                    menu.classList.remove('is-active');
+                } else {
+                    menu.classList.add('is-active');
+                }
+            }
+
+        </script>
     </body>
 </html>
